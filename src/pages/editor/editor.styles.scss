@@ -1,0 +1,133 @@
+.Controls {
+  height: 40px;
+  margin: 0;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  background: #eee;
+  &__heading {
+    margin: 0;
+    font-size: 18px;
+  }
+  &__heading,
+  &__checkbox-label,
+  &__link {
+    margin-right: 15px;
+  }
+
+  &__button {
+    cursor: pointer;
+  }
+}
+.Editor {
+  display: flex;
+  height: calc(100vh - 40px);
+}
+.Input {
+  display: flex;
+  flex-direction: column;
+  &__text {
+    flex-grow: 1;
+    height: 100%;
+  }
+  &__button {
+    cursor: pointer;
+  }
+}
+
+.Preview {
+  flex-grow: 1;
+  position: relative;
+  border: 1px solid black;
+  font-family: Verdana;
+  background: url(https://allmanorofduns.neocities.org/images/stone_wall.jpg),
+    #000;
+  background-size: 250px 250px;
+  overflow: hidden;
+  padding-bottom: 24px;
+  &__backing {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000b;
+    pointer-events: none;
+  }
+  &__markdown {
+    position: relative;
+    z-index: 2;
+    padding: 15px;
+    display: block;
+    overflow-y: scroll;
+    height: 100%;
+  }
+}
+
+.mnmd {
+  &-heading {
+    font-weight: bold;
+    text-align: center;
+    background: grey;
+    margin-bottom: 0;
+    padding: 12px 10px 12px;
+    border: 5px solid silver;
+    border-radius: 5px;
+    &-1 {
+      font-size: 28px;
+    }
+    &-2 {
+      font-size: 24px;
+    }
+    &-3 {
+      font-size: 20px;
+    }
+    &:has(+ .mnmd-paragraph) {
+      border-radius: 5px 5px 0 0;
+      border-bottom: none;
+    }
+    + .mnmd-paragraph {
+      margin-top: 0;
+      border-top: none;
+      border-radius: 0 0 5px 5px;
+      padding-top: 0;
+    }
+  }
+  &-link {
+    color: inherit;
+    &:visited {
+      color: inherit;
+    }
+  }
+  &-image {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+  }
+  &-linebreak {
+    height: 2px;
+    width: 95%;
+    margin: 15px auto;
+    background: grey;
+  }
+  &-semantically,
+  &-visually {
+    &-bold {
+      font-weight: bold;
+    }
+    &-italic {
+      font-style: italic;
+    }
+  }
+  &-paragraph {
+    background: gray;
+    padding: 12px 10px;
+    border: 5px solid silver;
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  &-code {
+    color: #7a0e44;
+  }
+}
